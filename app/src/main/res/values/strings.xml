@@ -23,4 +23,8 @@
     <string name="mensaje_positvo">Si</string>
     <string name="mensaje_negativo">No</string>
     <string name="eliminar_mensaje">Eliminar</string>
+    <string name="mensaje_error_cedula">Digite la cedula</string>
+    <string name="mensaje_error_nombre">Digite el nombre</string>
+    <string name="mensaje_error_apellido">Digite el apellido</string>
+    <string name="mensaje_error_foto">Seleccione una foto</string>
 </resources>

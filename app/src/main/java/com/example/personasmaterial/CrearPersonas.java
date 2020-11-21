@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.FirebaseDatabase;
@@ -40,19 +41,25 @@ public class CrearPersonas extends AppCompatActivity {
         String ced, nom, apell, id;
         Persona p;
         InputMethodManager imp;
+        imp = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imp.hideSoftInputFromWindow(cedula.getWindowToken(),0);
+
+        if (validar()){
+
 
         ced = cedula.getText().toString();
         nom = nombre.getText().toString();
         apell = apellido.getText().toString();
         id = Datos.getId();
-        imp = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         p = new Persona(ced,nom,apell,id);
         p.guardar();
-        imp.hideSoftInputFromWindow(cedula.getWindowToken(),0);
+
         limpiar();
         subir_foto(id);
         Snackbar.make(v,R.string.mensaje_guardado_exitosamente,Snackbar.LENGTH_LONG).show();
+        uri = null;
+    }
     }
     public void subir_foto(String id){
         StorageReference child = storageReference.child(id);
@@ -90,5 +97,32 @@ public class CrearPersonas extends AppCompatActivity {
                 foto.setImageURI(uri);
             }
         }
+    }
+
+    public boolean validar(){
+        if(cedula.getText().toString().isEmpty()){
+            cedula.setError(getString(R.string.mensaje_error_cedula));
+            cedula.requestFocus();
+            return false;
+        }
+
+        if (nombre.getText().toString().isEmpty()){
+            nombre.setError(getString(R.string.mensaje_error_nombre));
+            nombre.requestFocus();
+            return false;
+        }
+
+        if (apellido.getText().toString().isEmpty()){
+            apellido.setError(getString(R.string.mensaje_error_apellido));
+            apellido.requestFocus();
+            return false;
+        }
+
+        if (uri == null){
+
+            Snackbar.make((View)cedula, R.string.mensaje_error_foto,Snackbar.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 }
