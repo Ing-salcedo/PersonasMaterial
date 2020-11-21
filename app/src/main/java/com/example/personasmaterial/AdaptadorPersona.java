@@ -17,7 +17,7 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.Pers
     private ArrayList<Persona> personas;
     private OnPersonaClickListener clickListener;
 
-    public AdaptadorPersona(ArrayList<Persona> personas){
+    public AdaptadorPersona(ArrayList<Persona> personas, OnPersonaClickListener clickListener){
         this.personas = personas;
         this.clickListener = clickListener;
     }
