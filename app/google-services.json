@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "383963033821",
+    "firebase_url": "https://personasmaterial-954c2.firebaseio.com",
+    "project_id": "personasmaterial-954c2",
+    "storage_bucket": "personasmaterial-954c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383963033821:android:ffd744df34e18ce726eb34",
+        "android_client_info": {
+          "package_name": "com.example.personasmaterial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383963033821-3vak1fcet6u7hbj88ivbb531knqvm3ok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLRpeVfJZH70iT-LXITgccepKcwovXkF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383963033821-3vak1fcet6u7hbj88ivbb531knqvm3ok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
